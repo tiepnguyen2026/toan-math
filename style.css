@@ -1,0 +1,233 @@
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+.main-header {
+    background: rgb(17, 163, 12);
+    padding: 30px 0;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.logo-text {
+    font-size: 32px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.slogan {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #7497f8;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links > li {
+    position: relative;
+}
+
+.nav-links > li > a {
+    display: block;
+    color: rgb(0, 0, 0);
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.nav-links > li:hover > a {
+    background-color: #b36ef3;
+}
+
+.nav-links > li.active > a {
+    background-color: #2252d6; /* Màu đỏ nổi bật cho menu đang chọn */
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #eb9292;
+    min-width: 250px;
+    z-index: 100;
+}
+
+.dropdown-content li a {
+    color: white;
+    padding: 12px 15px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #6c39af;
+    font-size: 13px;
+}
+
+.dropdown-content li a:hover {
+    background-color: #9aa9ff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Search Section */
+.content-area {
+    background: white;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.box-title {
+    border-left: 5px solid #34a507;
+    padding-left: 15px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #444444;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-style: italic;
+}
+
+/* List Items */
+.explore-more {
+    margin-top: 30px;
+}
+
+.section-label {
+    background: #f9f9f9;
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+    border-bottom: 1px solid #eee;
+}
+
+.list-items {
+    list-style: none;
+}
+
+.list-items li {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    color: #333;
+    cursor: pointer;
+}
+
+.list-items li:hover {
+    background-color: #fcfcfc;
+}
+
+.pdf-container {
+    margin-top: 20px;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Làm cho khung PDF co giãn tốt trên điện thoại */
+iframe {
+    border-radius: 4px;
+}
+
+/* Khung chứa các ô đề thi */
+.exam-grid {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép xuống dòng khi hết chỗ */
+    gap: 20px;       /* Khoảng cách giữa các ô */
+    margin-top: 20px;
+}
+
+/* Từng ô đề thi (Card) */
+.exam-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    width: calc(50% - 10px); /* Chia làm 2 cột (trừ đi khoảng cách gap) */
+    transition: 0.3s;
+}
+
+/* Hiệu ứng khi di chuột vào ô */
+.exam-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: #e74c3c;
+    transform: translateY(-3px);
+}
+
+.exam-icon {
+    font-size: 40px;
+    color: #e74c3c;
+    margin-right: 20px;
+}
+
+.exam-info strong {
+    display: block;
+    font-size: 18px;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.exam-info p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Nút bấm xem đề */
+.view-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #e74c3c;
+    color: white !important;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.view-btn:hover {
+    background: #c0392b;
+}
+
+/* Responsive: Nếu màn hình nhỏ hơn 600px thì chỉ hiện 1 cột */
+@media (max-width: 600px) {
+    .exam-card {
+        width: 100%;
+    }
+}
