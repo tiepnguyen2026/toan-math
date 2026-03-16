@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website của thầy Tiệp dạy toán</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo-text">TIỆP MATH</h1>
+            <p class="slogan">CHIA SẺ TÀI LIỆU, ĐỀ THI TOÁN MIỄN PHÍ</p>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#"><i class="fa fa-home"></i></a></li>
+                <li class="dropdown">
+                    <a href="#">Giới thiệu về tôi <i class="fa fa-chevron-down"></i></a>
+                                <li class="dropdown">
+                <li class="dropdown">
+                    <a href="#">TOÁN 10 <i class="fa fa-chevron-down"></i></a>
+                </li>
+                <li class="dropdown">
+                    <a href="#">TOÁN 11 <i class="fa fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="gk2-toan11.html"><i class="fa fa-edit"></i> ĐỀ GIỮA KÌ II</a></li>
+                        <li><a href="#"><i class="fa fa-edit"></i> ĐỀ THPT CHÍNH THỨC</a></li>
+                        <li><a href="#"><i class="fa fa-edit"></i> ĐỀ ĐÁNH GIÁ NĂNG LỰC</a></li>
+                        <li><a href="#"><i class="fa fa-book"></i> TÀI LIỆU ÔN THI THPT</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">TOÁN 12 <i class="fa fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#vung-giua-ki-2" onclick="loadPage('gk2-toan12')">ĐỀ THI GIỮA KÌ II</a>
+                        <li><a href="#"><i class="fa fa-edit"></i> ĐỀ ĐÁNH GIÁ NĂNG LỰC</a></li>
+                        <li><a href="#"><i class="fa fa-book"></i> TÀI LIỆU ÔN THI THPT</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown active">
+                    <a href="#">ĐỀ THI THPT <i class="fa fa-paper-plane"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#"><i class="fa fa-edit"></i> ĐỀ THI THỬ THPT</a></li>
+                        <li><a href="#"><i class="fa fa-edit"></i> ĐỀ THPT CHÍNH THỨC</a></li>
+                        <li><a href="#"><i class="fa fa-edit"></i> ĐỀ ĐÁNH GIÁ NĂNG LỰC</a></li>
+                        <li><a href="#"><i class="fa fa-book"></i> TÀI LIỆU ÔN THI THPT</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">SGK-SBT <i class="fa fa-chevron-down"></i></a>
+                                <li class="dropdown">
+
+
+            </ul>
+        </div>
+    </nav>
+
+        <main class="container content-area">
+    <div id="trang-chu" class="page-content">
+        <h3 class="box-title">CHÀO MỪNG ĐẾN VỚI TIỆP MATH - WEBSITE CHIA SẺ TÀI LIỆU TOÁN MIỄN PHÍ</h3>
+        </div>
+
+    
+<div id="vung-giua-ki-2" class="page-content" style="display:none;">
+    <h3 class="box-title">ĐỀ THI GIỮA KÌ II - TOÁN 12</h3>
+    
+    <div class="exam-grid">
+        
+        <div class="exam-card">
+            <div class="exam-icon"><i class="fa fa-file-pdf"></i></div>
+            <div class="exam-info">
+                <strong>Đề thi giữa kì II THPT Huỳnh Thúc Kháng</strong>
+                <p>Năm học 2025 - 2026</p>
+                <a href="gk12-v1-2026-chinhthuc.pdf" target="_blank" class="view-btn">XEM ĐỀ THI</a>
+            </div>
+        </div>
+
+        <div class="exam-card">
+            <div class="exam-icon"><i class="fa fa-file-pdf"></i></div>
+            <div class="exam-info">
+                <strong>Đề thi ôn tập giữa kì II</strong>
+                <p>Đề ôn tập</p>
+                <a href="gk12-v1-2026.pdf" target="_blank" class="view-btn">XEM ĐỀ THI</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+</main>
+
+    </main>
+
+<script>
+    // 1. Tìm các nút bấm và các vùng nội dung
+    const nutBam = document.querySelectorAll('.nav-links a');
+    const cacVungNoiDung = document.querySelectorAll('.page-content');
+
+    // 2. Lập trình cho từng nút bấm
+    nutBam.forEach(nut => {
+        nut.addEventListener('click', function(e) {
+            // Nếu link bắt đầu bằng dấu # thì mới xử lý ẩn hiện
+            if (this.getAttribute('href').startsWith('#')) {
+                e.preventDefault(); // Không cho trang web tải lại
+
+                // Bước A: Ẩn tất cả các vùng nội dung đi
+                cacVungNoiDung.forEach(vung => vung.style.display = 'none');
+
+                // Bước B: Lấy cái ID từ nút vừa bấm (ví dụ: #vung-de-thi)
+                const idMucTieu = this.getAttribute('href');
+
+                // Bước C: Hiện cái vùng có ID đó lên
+                document.querySelector(idMucTieu).style.display = 'block';
+            }
+        });
+    });
+</script>
+</body>
+</html>
