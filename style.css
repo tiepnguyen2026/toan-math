@@ -7,9 +7,61 @@
 }
 
 body {
-    background-color: rgb(255, 255, 255);
+    /* Màu xám nhạt hơi xanh, giúp mắt dễ chịu hơn */
+    background-color: #f0f2f5; 
+    
+    /* HOẶC dùng Gradient cực nhẹ để tạo chiều sâu */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed; /* Giữ nền cố định khi cuộn trang */
 }
 
+.header-container {
+    display: flex; /* Kích hoạt chế độ dàn hàng ngang */
+    justify-content: space-between; /* Đẩy 2 phần về 2 phía xa nhất */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    padding: 20px 10%; /* Tạo khoảng cách thụt vào so với mép màn hình */
+    background-color: #6a1b9a; /* Màu tím hiện tại của bạn */
+        font-weight: bold;
+
+    color: white;
+}
+
+.header-left h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+
+    /* Phần sửa lỗi đổ màu Gradient */
+    background: linear-gradient(to right, #ffffff, #dcdde1); /* Màu từ trắng sang xám nhạt */
+    -webkit-background-clip: text; /* Cắt nền theo khung chữ (Dành cho Chrome, Safari, Edge) */
+    background-clip: text;         /* Cắt nền theo khung chữ (Chuẩn quốc tế) */
+    color: transparent;            /* Quan trọng: Phải để màu chữ trong suốt thì nền mới hiện lên */
+    
+    /* Chống lỗi hiển thị trên một số trình duyệt cũ */
+    display: inline-block; 
+}
+
+/* Font cho dòng "CHIA SẺ TÀI LIỆU..." bên dưới */
+.header-left p {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    opacity: 0.9; /* Làm mờ nhẹ đi một chút để tôn vinh tên chính */
+    color: #f0f0f0;
+    /* Thêm chữ 'Montserrat' vào đầu và đảm bảo có sans-serif dự phòng */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    /* Các thuộc tính khác giữ nguyên... */
+}
+.header-right {
+    text-align: right;
+    /* Bạn có thể thêm font-size hoặc style cho chữ ở đây */
+}
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -18,7 +70,7 @@ body {
 
 /* Header */
 .main-header {
-    background: rgb(17, 163, 12);
+    background: rgb(115, 39, 187);
     padding: 30px 0;
     text-align: left;
     border-bottom: 1px solid #eee;
@@ -31,10 +83,13 @@ body {
     margin-bottom: 5px;
 }
 
-.slogan {
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 16px;
+/* Kiểu dáng dòng Slogan ở giữa */
+.slogan-text {
+    font-family: 'Dancing Script', cursive; /* Sử dụng font cách điệu đã chọn */
+    font-size: 28px; /* Tùy chỉnh độ to nhỏ */
+    color: #ffd700; /* Màu vàng kim loại cho nổi bật trên nền tím */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Tạo bóng cho chữ có chiều sâu */
+    white-space: nowrap; /* Đảm bảo chữ không bị xuống dòng */
 }
 
 /* Navbar */
@@ -42,53 +97,89 @@ body {
     background-color: #7497f8;
 }
 
+
 .nav-links {
     list-style: none;
-    display: flex;
+    display: flex; /* Kích hoạt Flexbox */
+    flex-wrap: nowrap; /* QUAN TRỌNG: Ép các mục không được xuống dòng */
+    align-items: center;
+    max-width: 1000px; /* Khớp với container của bạn */
+    margin: 0 auto;
 }
 
 .nav-links > li {
     position: relative;
+    display: block; /* Đảm bảo li hoạt động tốt với flex */
+    flex-shrink: 0; /* Không cho phép các mục bị co lại quá mức */
+    border-right: 1px solid rgba(255, 255, 255, 0.3); /* Vách ngăn màu trắng mờ sẽ đẹp hơn trên nền xanh */
+}
+
+.nav-links > li:last-child {
+    border-right: none;
 }
 
 .nav-links > li > a {
     display: block;
-    color: rgb(0, 0, 0);
-    padding: 15px 20px;
+    color: #000;
+    padding: 15px 18px; /* Giảm padding một chút để tiết kiệm diện tích */
     text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 13px; /* Cỡ chữ 13-14px là vừa đẹp */
+    font-family: 'Be Vietnam Pro', sans-serif;
     text-transform: uppercase;
+    white-space: nowrap; /* Không cho chữ trong 1 mục bị xuống dòng */
+    transition: all 0.2s;
 }
 
-.nav-links > li:hover > a {
-    background-color: #b36ef3;
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%); /* Hiệu ứng gradient */
+    padding: 10px 0;
 }
 
-.nav-links > li.active > a {
-    background-color: #2252d6; /* Màu đỏ nổi bật cho menu đang chọn */
+.nav-item {
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px; /* Bo tròn các đầu tab */
+    transition: all 0.3s ease; /* Hiệu ứng mượt mà */
+    margin: 0 5px;
+    font-weight: 500;
 }
 
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.2); /* Sáng lên khi di chuột */
+    transform: translateY(-3px); /* Nhảy nhẹ lên trên */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
 /* Dropdown Menu */
+/* Dropdown Menu - Chỉnh cho chuyên nghiệp */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #eb9292;
-    min-width: 250px;
+    background-color: #ffffff; /* Đổi sang màu trắng */
+    min-width: 220px;
     z-index: 100;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Thêm bóng đổ cho nhẹ nhàng */
+    border: 1px solid #eee;
 }
 
 .dropdown-content li a {
-    color: white;
+    color: #333; /* Chữ màu xám đậm */
     padding: 12px 15px;
     text-decoration: none;
     display: block;
-    border-bottom: 1px solid #6c39af;
+    border-bottom: 1px solid #f0f0f0; /* Vách ngăn ngang trong menu con */
     font-size: 13px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    text-transform: none; /* Menu con không cần viết hoa hết */
+    font-weight: 400;
 }
 
 .dropdown-content li a:hover {
-    background-color: #9aa9ff;
+    background-color: #f5f5f5;
+    color: #6a1b9a; /* Di chuột vào hiện màu tím thương hiệu */
+    padding-left: 20px; /* Hiệu ứng dịch chuyển nhẹ khi hover */
 }
 
 .dropdown:hover .dropdown-content {
@@ -104,7 +195,7 @@ body {
 }
 
 .box-title {
-    border-left: 5px solid #34a507;
+    border-left: 5px solid #5a16a8;
     padding-left: 15px;
     font-size: 18px;
     margin-bottom: 20px;
@@ -230,4 +321,137 @@ iframe {
     .exam-card {
         width: 100%;
     }
+}
+
+/* Khung bao ngoài cùng */
+.profile-wrapper {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin: 10px;
+}
+
+.box-title-main {
+    color: #7c2d8b;
+    border-bottom: 2px solid #7c2d8b;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+/* Chia 2 cột bằng Flexbox */
+.profile-container-inner {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Cột bên trái */
+.profile-sidebar {
+    flex: 0 0 250px;
+    text-align: center;
+}
+
+.avatar-modern {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    border: 3px solid #fff;
+}
+
+.social-pills {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pill {
+    padding: 10px;
+    border-radius: 8px;
+    color: white !important;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    display: block;
+}
+
+.fb { background: #1877F2; }
+.tt { background: #000; }
+.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+.pill:hover { transform: scale(1.03); opacity: 0.9; }
+
+/* Cột bên phải */
+.profile-body {
+    flex: 1;
+}
+
+.section-h {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+/* Hiệu ứng Timeline */
+.timeline-item {
+    border-left: 3px solid #7c2d8b;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 13px;
+    height: 13px;
+    background: #7c2d8b;
+    border-radius: 50%;
+}
+
+.year {
+    font-weight: bold;
+    color: #7c2d8b;
+    display: block;
+    font-size: 0.9rem;
+}
+
+/* Nút sở thích */
+.hobby-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: #f0f2f5;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #555;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+.tag:hover {
+    background: #7c2d8b;
+    color: #fff;
+}
+
+.content-area {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 50px; /* Tăng padding để nội dung không bị sát mép */
+    text-align: center; /* Căn giữa toàn bộ chữ */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 40px auto; /* Đẩy khung xuống một chút cho thoáng */
 }

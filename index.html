@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website của thầy Tiệp dạy toán</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&family=Montserrat:wght@800&display=swap&subset=vietnamese" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="container">
-            <h1 class="logo-text">TIỆP MATH</h1>
-            <p class="slogan">CHIA SẺ TÀI LIỆU, ĐỀ THI TOÁN MIỄN PHÍ</p>
+    <header class="header-container">
+    <div class="header-left">
+        <h1>TIỆP MATH</h1>
+        <p>CHIA SẺ TÀI LIỆU, ĐỀ THI TOÁN MIỄN PHÍ</p>
+    </div>
+
+    <div class="header-center">
+        <span class="slogan-text">Học - học nữa - học mãi</span>
+    </div>
+
+    <div class="header-right">
+        <span>📞 Hotline: 0928.968.909</span>
         </div>
-    </header>
+</header>
 
 <nav class="navbar">
     <div class="container">
         <ul class="nav-links">
             <li><a href="#trang-chu"><i class="fa fa-home"></i></a></li>
-            <li><a href="#trang-chu">Giới thiệu</a></li> 
+            <li><a href="#vung-banthan">GIỚI THIỆU VỀ TÔI</a></li> 
             
             <li class="dropdown">
                 <a href="#">TOÁN 9 <i class="fa fa-chevron-down"></i></a>
@@ -48,7 +58,7 @@
                 </ul>
             </li>
 
-            <li class="dropdown active">
+            <li class="dropdown">
                 <a href="#">ĐỀ THI THPT <i class="fa fa-paper-plane"></i></a>
                 <ul class="dropdown-content">
                     <li><a href="#vung-thi-thu">ĐỀ THI THỬ THPT</a></li>
@@ -63,9 +73,20 @@
 
         <main class="container content-area">
     <div id="trang-chu" class="page-content">
-        <h3 class="box-title">CHÀO MỪNG ĐẾN VỚI TIỆP MATH - WEBSITE CHIA SẺ TÀI LIỆU TOÁN MIỄN PHÍ</h3>
+        <section class="welcome-hero">
+    <div class="welcome-content">
+        <h2>Chào mừng bạn đến với <span class="highlight">Tiệp Math</span></h2>
+        <p>Kho tài liệu ôn thi môn Toán chất lượng cao, từ cơ bản đến nâng cao. Chúc các bạn học tập thật tốt và đạt kết quả cao!</p>
+        <div class="welcome-buttons">
+            <a href="#" class="btn-primary">Xem tài liệu mới</a>
+            <a href="#" class="btn-secondary">Đăng ký học thử</a>
         </div>
-
+    </div>
+    <div class="welcome-image">
+        <img src="logostudy.png" alt="Toán học">
+    </div>
+        </section>
+        </div>
     
 <div id="vung-giua-ki-2" class="page-content" style="display:none;">
     <h3 class="box-title">ĐỀ THI GIỮA KÌ II - TOÁN 12</h3>
@@ -169,6 +190,52 @@
     </div>
 </div> 
 
+<div id="vung-banthan" class="page-content" style="display:none;">
+    <div class="profile-wrapper">
+        <h3 class="box-title-main">GIỚI THIỆU BẢN THÂN</h3>
+        
+        <div class="profile-container-inner">
+            <div class="profile-sidebar">
+                <div class="image-container">
+                    <img src="hinhtiep.jpg" class="avatar-modern">
+                    <div class="status-dot"></div>
+                </div>
+                <div class="social-pills">
+                    <a href="https://facebook.com/tiepkcdhv" target="_blank" class="pill fb"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://tiktok.com/@tiepkcdhv" target="_blank" class="pill tt"><i class="fab fa-tiktok"></i> Tiktok</a>
+                    <a href="https://instagram.com/tiepkcdhv99" target="_blank" class="pill ig"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+
+            <div class="profile-body">
+                <div class="info-section">
+                    <h4 class="section-h"><i class="fas fa-university"></i> HÀNH TRÌNH HỌC VẤN</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="year">2014 - 2017</span>
+                            <p><strong>Cấp 3:</strong> THPT Chuyên Đại học Vinh</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="year">2017 - 2021</span>
+                            <p><strong>Đại học:</strong> Sư phạm Toán chất lượng cao - ĐH Vinh</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h4 class="section-h"><i class="fas fa-gamepad"></i> SỞ THÍCH & ĐAM MÊ</h4>
+                    <div class="hobby-tags">
+                        <span class="tag">Giải toán</span>
+                        <span class="tag">Lập trình</span>
+                        <span class="tag">Cờ vua</span>
+                        <span class="tag">Bóng đá</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="vung-tai-lieu-12" class="page-content" style="display:none;">
     <h3 class="box-title">TÀI LIỆU ÔN THI THPT QUỐC GIA</h3>
     
@@ -184,6 +251,8 @@
         </div>
 </div>
 
+
+
 <div id="vung-chinhthuc" class="page-content" style="display:none;">
     <h3 class="box-title">ĐỀ THI THPT QUỐC GIA CHÍNH THỨC</h3>
     
@@ -197,6 +266,7 @@
                 <a href="de-chinhthuc-2025.pdf" target="_blank" class="view-btn">XEM ĐỀ THI</a>
             </div>
         </div>
+    </div>
 </div>
 
 
