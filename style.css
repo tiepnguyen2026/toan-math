@@ -154,8 +154,10 @@ body {
 }
 /* Dropdown Menu */
 /* Dropdown Menu - Chỉnh cho chuyên nghiệp */
+
 .dropdown-content {
-    display: none;
+    display: none;    
+    list-style: none;
     position: absolute;
     background-color: #ffffff; /* Đổi sang màu trắng */
     min-width: 220px;
@@ -185,6 +187,7 @@ body {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
 
 /* Search Section */
 .content-area {
@@ -425,7 +428,7 @@ iframe {
 /* Nút sở thích */
 .hobby-tags {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
